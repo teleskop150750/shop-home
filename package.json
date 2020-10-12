@@ -1,0 +1,130 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "gulp",
+    "clean:dist": "gulp clean",
+    "build": "gulp build",
+    "watchFiles": "gulp watchFiles browser",
+    "html": "gulp html",
+    "css": "gulp css",
+    "js": "gulp js jsLibs",
+    "img": "gulp img",
+    "fonts": "gulp fonts",
+    "min": "gulp min"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "autoprefixer": "^9.8.6",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "browser-sync": "^2.26.12",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "del": "^5.1.0",
+    "eslint": "^7.7.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-changed": "^4.0.2",
+    "gulp-debug": "^4.0.0",
+    "gulp-fonter": "^0.3.0",
+    "gulp-html-tag-include": "^1.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-jsbeautifier": "^3.0.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-prettier": "^3.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-ttf2woff2": "^3.0.0",
+    "gulp-webp": "^4.0.1",
+    "gulp-webp-html": "^1.0.2",
+    "postcss-import": "^12.0.1",
+    "postcss-media-minmax": "^4.0.0",
+    "postcss-nested": "^4.2.3",
+    "prettier": "^2.1.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-recess-order": "^2.1.0",
+    "stylelint-config-standard": "^20.0.0",
+    "webpack": "^4.44.1",
+    "webpack-stream": "^6.0.0"
+  },
+  "browserslist": [
+    "last 2 version",
+    "not dead",
+    "not ie <= 11",
+    "iOS >= 12"
+  ],
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2020": true
+    },
+    "extends": [
+      "airbnb-base"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 11,
+      "sourceType": "module"
+    },
+    "parser": "babel-eslint",
+    "rules": {
+      "max-len": [
+        1,
+        {
+          "code": 80,
+          "ignoreComments": true,
+          "ignoreTrailingComments": true,
+          "ignoreUrls": true,
+          "ignoreStrings": true,
+          "ignoreTemplateLiterals": true,
+          "ignoreRegExpLiterals": true
+        }
+      ],
+      "no-plusplus": [
+        2,
+        {
+          "allowForLoopAfterthoughts": true
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "/node_modules/",
+    "/dist/",
+    "/min/",
+    "/src/js/libs/"
+  ],
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-recess-order"
+    ],
+    "rules": {
+      "color-hex-length": "long",
+      "declaration-empty-line-before": "never"
+    }
+  },
+  "prettier": {
+    "printWidth": 150,
+    "useTabs": false,
+    "tabWidth": 2,
+    "semi": true,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "arrowParens": "always"
+  },
+  "jsbeautify": {
+    "indent_size": 2
+  },
+  "dependencies": {
+    "swiper": "^6.3.3"
+  }
+}

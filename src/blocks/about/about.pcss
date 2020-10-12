@@ -1,0 +1,67 @@
+.about-slider {
+  position: relative;
+  width: 100%;
+
+  /* height: 300px; */
+  padding-bottom: 45px;
+  overflow: hidden;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition-property: transform;
+  }
+
+  &__slide {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 40.78%;
+    overflow: hidden;
+    background-color: tomato;
+    transition-property: transform;
+
+    &:nth-child(odd) {
+      background-color: aqua;
+    }
+  }
+
+  &__slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    /* display: none; */
+  }
+
+  &__pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+    transition: 300ms opacity;
+    transform: translate3d(0, 0, 0);
+  }
+
+  &__bullet {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    margin: 0 4px;
+    cursor: pointer;
+    background: #000000;
+    opacity: 0.2;
+
+    &--active {
+      opacity: 1;
+    }
+  }
+}
