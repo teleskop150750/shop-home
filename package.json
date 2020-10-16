@@ -13,6 +13,9 @@
     "fonts": "gulp fonts",
     "min": "gulp min"
   },
+  "dependencies": {
+    "swiper": "^6.3.3"
+  },
   "devDependencies": {
     "@babel/core": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
@@ -123,8 +126,5 @@
   },
   "jsbeautify": {
     "indent_size": 2
-  },
-  "dependencies": {
-    "swiper": "^6.3.3"
   }
 }
