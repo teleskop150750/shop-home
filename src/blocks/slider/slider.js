@@ -14,22 +14,19 @@ const mySwiper = new Swiper('.slider', {
     crossFade: true,
   },
 
-  loop: true,
+  // loop: true,
   speed: 1000,
   autoplay: {
     delay: 3000,
   },
   // slidesPerView: 1,
-  breakpoints: {
-    800: {
-      // If we need pagination
-      pagination: {
-        el: '.slider__pagination',
-        bulletClass: 'slider__bullet',
-        bulletActiveClass: 'slider__bullet--active',
-        clickable: true,
-      },
-    },
+
+  // If we need pagination
+  pagination: {
+    el: '.slider__pagination',
+    bulletClass: 'slider__bullet',
+    bulletActiveClass: 'slider__bullet--active',
+    clickable: true,
   },
 
 });

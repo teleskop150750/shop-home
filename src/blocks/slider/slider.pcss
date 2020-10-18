@@ -1,8 +1,6 @@
 .slider {
   position: relative;
   width: 100%;
-
-  /* height: 300px; */
   padding-bottom: 45px;
   overflow: hidden;
 
@@ -19,13 +17,15 @@
     flex-shrink: 0;
     width: 100%;
     height: 100%;
-    padding-bottom: 40.78%;
     overflow: hidden;
-    background-color: tomato;
     transition-property: transform;
 
-    &:nth-child(odd) {
-      background-color: aqua;
+    @media (width >= 10px) and (width <= 500px) {
+      padding-bottom: 60%;
+    }
+
+    @media (width > 500px) {
+      padding-bottom: 40.78%;
     }
   }
 
@@ -37,19 +37,24 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-
-    /* display: none; */
   }
 
   &__pagination {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    text-align: center;
-    transition: 300ms opacity;
-    transform: translate3d(0, 0, 0);
+    @media (width >= 10px) and (width <= 768px) {
+      display: none;
+    }
+
+    @media (width > 768px) {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      z-index: 10;
+      display: block;
+      width: 100%;
+      text-align: center;
+      transition: 300ms opacity;
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   &__bullet {
