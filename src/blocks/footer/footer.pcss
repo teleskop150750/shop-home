@@ -1,0 +1,58 @@
+.footer {
+  padding: 16px 0;
+
+  @media (width > 740px) {
+    padding: 32px 0;
+  }
+
+  &__container {
+    display: grid;
+    max-width: 1170px;
+    padding: 0 16px;
+    margin: 0 auto;
+
+    @media (width >= 10px) and (width <= 740px) {
+      row-gap: 16px;
+      justify-items: center;
+    }
+
+    @media (width > 740px) {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: minmax(210px, 260px) max-content;
+    column-gap: 8px;
+    padding: 0 16px;
+
+    @media (width > 740px) {
+      justify-self: start;
+    }
+  }
+
+  &__form-input {
+    padding: 6px 10px;
+    font-size: 14px;
+    border: 1px solid var(--color-black);
+  }
+
+  &__form-button {
+    display: block;
+    padding: 3px 10px 6px 10px;
+    font-size: 14px;
+    background: transparent;
+    border: 1px solid var(--color-black);
+  }
+
+  &__copy {
+    margin: 0;
+    text-align: center;
+
+    @media (width > 740px) {
+      justify-self: end;
+    }
+  }
+}

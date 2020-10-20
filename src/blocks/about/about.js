@@ -9,6 +9,12 @@ let aboutSwiper;
 const enableSwiper = () => {
   aboutSwiper = new Swiper('.about-slider', {
     init: false,
+
+    speed: 1000,
+    autoplay: {
+      delay: 5000,
+    },
+
     wrapperClass: 'about-slider__wrapper',
     slideClass: 'about-slider__slide',
     slideActiveClass: 'about-slider__slide--active',
