@@ -26,29 +26,64 @@
     </div>
   </div>
 
-  <div class="header__logo">
-    <a class="header__logo-link" href="/">
-      <h1 class="header__logo-title">Luxury Wacthes</h1>
-    </a>
-  </div>
-
   <div class="header__bottom">
     <div class="header__bottom-container">
-      <nav class="header__nav">
+      <nav class="nav header__nav">
         <button class="header__nav-button">
-          Каталог
+          X
         </button>
+
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="" class="nav__link">
+              Home
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">
+              Menu
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">
+              Woman
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">
+              Kids
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">
+              Blog
+            </a>
+          </li>
+          <li class="nav__item">
+            <a href="" class="nav__link">
+              Contact
+            </a>
+          </li>
+        </ul>
       </nav>
 
-      <form action="" class="header__form">
-        <input class="header__form-input" type="search" name="search" id="">
-        <button class="header__form-button" type="submit" aria-label="поиск">
-          <img src="./img/search.svg" alt="поиск">
-        </button>
-      </form>
+      <a class="header__logo-link" href="/">
+        <h1 class="header__logo-title">Luxury Wacthes</h1>
+      </a>
+
+      <button class="header__form-open" type="button">
+        <img src="./img/search.svg" alt="поиск">
+      </button>
+
+      <div class="header__form-wrapper">
+        <form action="" class="header__form">
+          <input class="header__form-input" type="search" name="search" id="" placeholder="Поиск">
+          <button class="header__form-submit" type="submit">
+            <img src="./img/search.svg" alt="поиск">
+          </button>
+        </form>
+      </div>
+
     </div>
   </div>
-
-
-
 </header>
