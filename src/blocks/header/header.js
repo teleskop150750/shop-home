@@ -2,35 +2,47 @@
 
 import paddingScroll from '../../js/global/padding-scroll';
 
-export default () => {
-  const padding = paddingScroll();
-  const button = document.querySelector('.header__burger');
-  const nav = document.querySelector('.header__nav');
-  const body = document.querySelector('.page__body');
+// const padding = paddingScroll();
+// const button = document.querySelector('.header__burger');
+// const nav = document.querySelector('.header__nav');
+// const body = document.querySelector('.page__body');
 
-  const closeNav = (e) => {
-    e.stopPropagation();
-    if (!e.target.classList.contains('header__nav')) {
-      nav.classList.remove('header__nav--open');
-      body.classList.remove('page__body--overflow');
-      padding.removePadding();
-      body.removeEventListener('click', closeNav);
-    }
-  };
+// const closeNav = (e) => {
+//   e.stopPropagation();
+//   if (!e.target.classList.contains('header__nav')) {
+//     nav.classList.remove('header__nav--open');
+//     body.classList.remove('page__body--overflow');
+//     padding.removePadding();
+//     body.removeEventListener('click', closeNav);
+//   }
+// };
 
-  const toggleNav = (e) => {
-    e.stopPropagation();
-    nav.classList.toggle('header__nav--open');
-    if (nav.classList.contains('header__nav--open')) {
-      padding.addPadding();
-      body.classList.add('page__body--overflow');
-      body.addEventListener('click', closeNav);
-    } else {
-      body.classList.remove('page__body--overflow');
-      padding.removePadding();
-      body.removeEventListener('click', closeNav);
-    }
-  };
+// const toggleNav = (e) => {
+//   e.stopPropagation();
+//   nav.classList.toggle('header__nav--open');
+//   if (nav.classList.contains('header__nav--open')) {
+//     padding.addPadding();
+//     body.classList.add('page__body--overflow');
+//     body.addEventListener('click', closeNav);
+//   } else {
+//     body.classList.remove('page__body--overflow');
+//     padding.removePadding();
+//     body.removeEventListener('click', closeNav);
+//   }
+// };
 
-  button.addEventListener('click', toggleNav);
+// button.addEventListener('click', toggleNav);
+
+const buttonSearchOpen = document.querySelector('.header__form-open');
+const search = document.querySelector('.header__form-wrapper ');
+const formInput = document.querySelector('.header__form-input');
+console.log(formInput);
+const searchToggle = () => {
+  console.log(1);
+  search.classList.toggle('header__form-wrapper--open');
+  if (search.classList.contains('header__form-wrapper--open')) {
+    formInput.focus();
+  }
 };
+
+buttonSearchOpen.addEventListener('click', searchToggle);
