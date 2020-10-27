@@ -1,6 +1,6 @@
-// header
-
-import paddingScroll from '../../js/global/padding-scroll';
+import './search';
+import './nav';
+// import paddingScroll from '../../js/global/padding-scroll';
 
 // const padding = paddingScroll();
 // const button = document.querySelector('.header__burger');
@@ -32,17 +32,3 @@ import paddingScroll from '../../js/global/padding-scroll';
 // };
 
 // button.addEventListener('click', toggleNav);
-
-const buttonSearchOpen = document.querySelector('.header__form-open');
-const search = document.querySelector('.header__form-wrapper ');
-const formInput = document.querySelector('.header__form-input');
-console.log(formInput);
-const searchToggle = () => {
-  console.log(1);
-  search.classList.toggle('header__form-wrapper--open');
-  if (search.classList.contains('header__form-wrapper--open')) {
-    formInput.focus();
-  }
-};
-
-buttonSearchOpen.addEventListener('click', searchToggle);

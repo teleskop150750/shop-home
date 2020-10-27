@@ -1,6 +1,8 @@
 /* header */
 
 .header {
+  z-index: 10;
+
   &__top {
     padding: 8px 0;
     background-color: var(--color-black);
@@ -47,7 +49,7 @@
     border: none;
     appearance: none;
 
-    @media (width >= 10px) and (width <= 500px) {
+    @media (width <= 500px) {
       /* width: 90px; */
       font-size: 14px;
     }
@@ -65,17 +67,18 @@
   &__bottom {
     position: relative;
     z-index: 1;
-    padding: 12px 0;
+    padding: 0;
+    background-color: var(--color-white);
   }
 
   &__bottom-container {
     display: grid;
 
-    @media (width >= 10px) and (width <= 768px) {
+    @media (width <= 768px) {
       grid-template-columns: min-content 1fr min-content;
       column-gap: 5px;
       align-items: center;
-      padding: 0 16px;
+      padding: 12px 16px;
     }
 
     @media (width > 768px) {
@@ -85,20 +88,19 @@
   }
 
   &__bottom-bacgraund {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    background-color: var(--color-white);
-  }
-
-  &__nav {
+    @media (width <= 768px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      background-color: var(--color-white);
+    }
   }
 
   &__open-nav {
-    z-index: 1;
+    z-index: 20;
     display: block;
     width: 30px;
     height: 30px;
@@ -108,17 +110,35 @@
     }
   }
 
+  &__nav {
+    @media (width <= 768px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 200;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.4s ease-out;
+      transform: translateX(-100%);
+    }
+  }
+
+  &__nav--open {
+    @media (width <= 768px) {
+      transform: translateX(0);
+    }
+  }
+
   /* =============================================================== */
 
   &__logo {
-    z-index: 2;
+    z-index: 20;
 
     @media (width > 768px) {
       grid-row: 1 / 2;
       grid-column: 1 / 3;
       padding-bottom: 12px;
       margin-bottom: 15px;
-      border-bottom: 1px solid black;
     }
   }
 
@@ -127,7 +147,7 @@
     font-weight: 500;
     text-align: center;
 
-    @media (width >= 10px) and (width <= 420px) {
+    @media (width <= 420px) {
       font-size: 25px;
     }
   }
@@ -139,7 +159,7 @@
   }
 
   &__form-open {
-    z-index: 30;
+    z-index: 20;
     display: grid;
     align-content: center;
     justify-content: center;
@@ -158,21 +178,18 @@
   /* =============================================================== */
 
   &__form-wrapper {
-    @media (width >= 10px) and (width <= 768px) {
+    z-index: 1;
+
+    @media (width <= 768px) {
       position: absolute;
       top: 100%;
       left: 0;
-      z-index: 0;
       width: 100%;
       height: calc(100vh);
-      visibility: hidden;
+      pointer-events: none;
       background-color: rgba(0, 0, 0, 0.7);
-
-      /* background-color: var(--color-white); */
-      border-top: 1px solid var(--color-grey-lighter);
       opacity: 0;
-      transition: all 0.2s ease-out;
-      transform: translateY(-12px);
+      transition: opacity 0.2s ease-in-out;
     }
 
     @media (width > 768px) {
@@ -182,24 +199,48 @@
     }
   }
 
-  &__form-wrapper--open {
-    @media (width >= 10px) and (width <= 768px) {
-      visibility: visible;
-      opacity: 1;
-      transform: translateY(-1px);
-    }
-  }
-
   &__form {
+    position: relative;
+    z-index: 1;
     display: grid;
 
     /* display: none; */
-    @media (width >= 10px) and (width <= 768px) {
+    @media (width <= 768px) {
       grid-template-columns: 1fr;
+      transition: transform 0.2s ease-out 0.2s;
+      transform: translateY(-100%);
     }
 
     @media (width > 768px) {
       grid-template-columns: minmax(100px, 180px) min-content;
+    }
+  }
+
+  &__form-wrapper--open {
+    @media (width <= 768px) {
+      pointer-events: all;
+      opacity: 1;
+    }
+
+    .header {
+      &__form {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__form-wrapper--close {
+    @media (width <= 768px) {
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease-out 0.2s;
+    }
+
+    .header {
+      &__form {
+        transition: transform 0.2s ease-out;
+        transform: translateY(-100%);
+      }
     }
   }
 
@@ -211,7 +252,7 @@
 
     /* border: none; */
 
-    @media (width >= 10px) and (width <= 768px) {
+    @media (width <= 768px) {
       grid-template-columns: 1fr;
     }
   }
@@ -227,7 +268,7 @@
     border: 2px solid var(--color-grey-lightest);
     border-left: none;
 
-    @media (width >= 10px) and (width <= 768px) {
+    @media (width <= 768px) {
       display: none;
     }
 
@@ -244,7 +285,7 @@
   grid-template-columns: 1fr;
   justify-items: end;
 
-  @media (width >= 10px) and (width <= 500px) {
+  @media (width <= 500px) {
     font-size: 14px;
   }
 
@@ -274,17 +315,20 @@
 }
 
 .nav {
-  @media (width >= 10px) and (width <= 768px) {
-    display: none;
+  @media (width <= 768px) {
+    /* display: flex; */
+    overflow-y: auto;
+    background: black;
   }
 
   &__list {
-    padding: 0;
     margin: 0;
     list-style: none;
+    background: #ffffff;
 
-    @media (width >= 10px) and (width <= 768px) {
-      display: none;
+    @media (width <= 768px) {
+      min-height: 100%;
+      padding: 10px 20px;
     }
 
     @media (width > 768px) {
@@ -292,14 +336,48 @@
       grid-template-columns: repeat(6, max-content);
       column-gap: 20px;
     }
+
+    &--open {
+      @media (width <= 768px) {
+        transform: translateX(0);
+      }
+    }
   }
 
   &__item {
+    @media (width <= 768px) {
+      font-size: 38px;
+      font-weight: 300;
+    }
+
+    &--back {
+      @media (width <= 768px) {
+        display: grid;
+        grid-template-columns: 1fr min-content;
+        align-items: center;
+        font-size: 44px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__list-title {
+    @media (width <= 768px) {
+      margin: 0;
+    }
+  }
+
+  &__list-button {
+    width: 40px;
+    height: 40px;
   }
 
   &__link {
     display: inline-block;
     color: inherit;
     text-decoration: none;
+
+    @media (width <= 768px) {
+    }
   }
 }

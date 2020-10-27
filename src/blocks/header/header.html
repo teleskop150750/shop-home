@@ -1,5 +1,5 @@
 <header class="page__header header">
-  <div class="header__top">
+  <div class="header__top js-scroll">
     <div class="header__top-container">
       <div class="header__top-drops">
         <div class="header__top-drop-wrapper">
@@ -26,14 +26,18 @@
     </div>
   </div>
 
-  <div class="header__bottom">
+  <div class="header__bottom js-scroll">
     <div class="header__bottom-container">
       <div class="header__bottom-bacgraund"></div>
-      <button class="header__open-nav">
+      <button class="header__open-nav" type="button">
         X
       </button>
       <nav class="nav header__nav">
         <ul class="nav__list">
+          <li class="nav__item nav__item--back">
+           <p class="nav__list-title">Категории</p>
+           <button class="nav__list-button">&#60;</button>
+          </li>
           <li class="nav__item">
             <a href="" class="nav__link">Home</a>
           </li>
@@ -65,9 +69,9 @@
         <img src="./img/search.svg" alt="поиск">
       </button>
 
-      <div class="header__form-wrapper header__form-wrapper--open">
+      <div class="header__form-wrapper">
         <form action="" class="header__form">
-          <input class="header__form-input" type="search" name="search" id="" placeholder="Поиск">
+          <input class="header__form-input" type="search" name="search" placeholder="Поиск">
           <button class="header__form-submit" type="submit">
             <img src="./img/search.svg" alt="поиск">
           </button>
